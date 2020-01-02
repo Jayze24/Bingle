@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Bingle</string>
+    <string name="server_connection_failure">서버 연결에 실패 했습니다.</string>
+    <string name="login_failure">로그인에 실패 했습니다.</string>
+    <string name="db_user_failure">로그인 정보 저장에 실패 했습니다.</string>
+    <string name="ok">확인</string>
+    <string name="update_required">필수 업데이트</string>
+    <string name="update">업데이트</string>
+    <string name="later">나중에</string>
+    <string name="auth_failure">인증 실패</string>
+</resources>
