@@ -1,4 +1,4 @@
-package space.jay.bingle.ui.dialog
+package space.jay.bingle.modules.dialog
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -14,7 +14,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import space.jay.bingle.R
 
-class DialogManager {
+class ManagerDialog {
 
     fun show(activityContext: Context,
              icon: Drawable?,

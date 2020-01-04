@@ -1,7 +1,5 @@
 package space.jay.bingle
 
-import java.lang.RuntimeException
-
 class Constants {
 
     interface RequestCode {

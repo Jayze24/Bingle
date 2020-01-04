@@ -6,7 +6,6 @@ import dagger.Provides
 import io.objectbox.BoxStore
 import space.jay.bingle.data.MyObjectBox
 import space.jay.bingle.modules.BoxUser
-import space.jay.bingle.modules.BoxVersion
 import javax.inject.Singleton
 
 @Module
@@ -20,8 +19,4 @@ class ModuleObjectBox {
     @Singleton
     @Provides
     fun providesBoxUser(boxStore: BoxStore) = BoxUser(boxStore)
-
-    @Singleton
-    @Provides
-    fun providesBoxVersion(applicationContext: Context) = BoxVersion(applicationContext)
 }

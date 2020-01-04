@@ -11,7 +11,7 @@ import space.jay.bingle.R
 import space.jay.bingle.data.LiveDataObject
 import space.jay.bingle.data.Version
 
-class BoxVersion(private val applicationContext: Context) {
+class ManagerVersion(private val applicationContext: Context) {
 
     private var mVersionFromServer: Version = Version()
     private var mServerRetryCount = Constants.Init.INT
@@ -22,7 +22,7 @@ class BoxVersion(private val applicationContext: Context) {
                 if (mServerRetryCount < Constants.Server.SERVER_RETRY_MAX_COUNT) {
                     mServerRetryCount++
 
-                    Log.d(this@BoxVersion.javaClass.simpleName, t.message.toString())
+                    Log.d(this@ManagerVersion.javaClass.simpleName, t.message.toString())
                     sendVersionServerToLiveData(loginLiveData)
                 } else {
                     loginLiveData.postValue(
