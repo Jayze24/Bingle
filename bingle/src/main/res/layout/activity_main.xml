@@ -1,14 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.main.ActivityMain">
+<layout>
+    <data></data>
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="main"/>
+        tools:context=".ui.main.ActivityMain">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_main_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_main_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9"/>
+
+        <ImageView
+            android:id="@+id/imageView_main_profile_background"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="프로필창 백그라운드"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guide_main_start"
+            app:layout_constraintEnd_toEndOf="@id/guide_main_end"/>
+
+
+        <ImageView
+            android:id="@+id/imageView_main_profile_character"
+            android:layout_width="150dp"
+            android:layout_height="180dp"
+            android:background="#729"
+            android:layout_marginStart="10dp"
+            android:contentDescription="캐릭터 이미지"
+            app:layout_constraintTop_toTopOf="@id/imageView_main_profile_background"
+            app:layout_constraintBottom_toBottomOf="@id/imageView_main_profile_background"
+            app:layout_constraintStart_toStartOf="@id/imageView_main_profile_background"/>
+
+        <ImageView
+            android:id="@+id/imageView_main_profile_class"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="#986"
+            android:layout_marginStart="10dp"
+            android:contentDescription="등급"
+            app:layout_constraintStart_toEndOf="@id/imageView_main_profile_character"
+            app:layout_constraintTop_toTopOf="@id/imageView_main_profile_character"/>
+
+        <TextView
+            android:id="@+id/textView_main_profile_score"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="점수 들어가는 곳"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imageView_main_profile_class"
+            app:layout_constraintEnd_toEndOf="@id/imageView_main_profile_background"
+            app:layout_constraintTop_toTopOf="@id/imageView_main_profile_class"
+            app:layout_constraintBottom_toBottomOf="@id/imageView_main_profile_class"/>
+
+        <TextView
+            android:id="@+id/textView_main_profile_id"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:gravity="center_vertical"
+            android:text="아이디 들어가는 곳"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/imageView_main_profile_class"
+            app:layout_constraintStart_toStartOf="@id/imageView_main_profile_class"
+            app:layout_constraintEnd_toEndOf="@id/textView_main_profile_score"/>
+
+        <Button
+            android:id="@+id/button_main_game"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="게임 입장"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guide_main_start"
+            app:layout_constraintEnd_toEndOf="@id/guide_main_end"/>
+
+        <Button
+            android:id="@+id/button_main_friend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="친구"
+            app:layout_constraintTop_toBottomOf="@id/button_main_game"
+            app:layout_constraintStart_toStartOf="@id/button_main_game"
+            app:layout_constraintEnd_toEndOf="@id/button_main_game"/>
+
+        <Button
+            android:id="@+id/button_main_setting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="설정"
+            app:layout_constraintTop_toBottomOf="@id/button_main_friend"
+            app:layout_constraintStart_toStartOf="@id/button_main_game"
+            app:layout_constraintEnd_toEndOf="@id/button_main_game"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

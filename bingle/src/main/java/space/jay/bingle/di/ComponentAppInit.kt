@@ -15,6 +15,7 @@ import javax.inject.Singleton
         AndroidInjectionModule::class,
         ModuleApplication::class,
         ModuleActivity::class,
+        ModuleFragment::class,
         ModuleObjectBox::class]
 )
 interface ComponentAppInit : AndroidInjector<AppInit> {

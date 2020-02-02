@@ -13,4 +13,14 @@
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:background">#33638745</item>
     </style>
+
+
+    <style name="BoardTile" parent="Widget.AppCompat.ImageButton">
+        <item name="android:layout_width">@dimen/size_board_block</item>
+        <item name="android:layout_height">@dimen/size_board_block</item>
+    </style>
+
+    <style name="BoardTile.basic" parent="BoardTile">
+        <item name="android:src">@drawable/board_basic_tile_selector</item>
+    </style>
 </resources>

@@ -2,6 +2,7 @@ package space.jay.bingle
 
 import android.view.View
 import androidx.databinding.BindingAdapter
+import androidx.lifecycle.AndroidViewModel
 
 @BindingAdapter("onClickMethod")
 fun onClickMethod(view: View, method: () -> Unit) {

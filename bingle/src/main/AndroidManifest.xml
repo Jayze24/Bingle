@@ -23,13 +23,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.main.ActivityMain" />
+        <activity
+            android:name=".ui.main.ActivityMain"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.game.ActivityGame"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".modules.loading.ActivityLoading"
-            android:theme="@style/AppTheme.TranslucentActivity"/>
+            android:theme="@style/AppTheme.TranslucentActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".modules.permissions.ActivityPermissions"
-            android:theme="@style/AppTheme.TranslucentActivity"/>
+            android:theme="@style/AppTheme.TranslucentActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

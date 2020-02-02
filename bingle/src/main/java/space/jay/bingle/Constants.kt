@@ -56,6 +56,8 @@ class Constants {
 
             const val EXTRA_PERMISSION_REQUEST = "EXTRA_PERMISSION_REQUEST"
             const val EXTRA_PERMISSION_ALERT_CONTENT = "EXTRA_PERMISSION_ALERT_CONTENT"
+
+            const val EXTRA_TYPE_BOARD = "EXTRA_TYPE_BOARD"
         }
     }
 }
