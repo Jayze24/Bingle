@@ -51,7 +51,7 @@ class ManagerVersion(private val applicationContext: Context) {
             if (headers[Constants.Version.IS_WORKING]?.toBoolean() == true && listBody.size == 3) {
                 mVersionFromServer = mVersionFromServer.apply {
                     //서버에서 받은 정보 넣기
-                    this.app = headers[Constants.Version.APP] ?: Constants.Init.App
+                    this.app = headers[Constants.Version.APP] ?: Constants.Init.APP
                     this.alert1 = listBody[1]
                     this.alert2 = listBody[2]
                     this.banner = headers[Constants.Version.BANNER] ?: Constants.Init.STRING
@@ -77,7 +77,7 @@ class ManagerVersion(private val applicationContext: Context) {
     private fun checkAppVersion(liveData: LiveDataObject) {
         mVersionFromServer.let { versionFromServer ->
             val latestVersion = versionFromServer.app
-            if (latestVersion == Constants.Init.App){
+            if (latestVersion == Constants.Init.APP){
                 setLiveDataFail(liveData)
                 return
             }

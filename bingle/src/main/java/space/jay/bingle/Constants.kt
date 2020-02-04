@@ -21,7 +21,7 @@ class Constants {
 
     interface Init {
         companion object {
-            const val App = "0.0"
+            const val APP = "0.0"
             const val INT = 0
             const val STRING = ""
         }
@@ -58,6 +58,13 @@ class Constants {
             const val EXTRA_PERMISSION_ALERT_CONTENT = "EXTRA_PERMISSION_ALERT_CONTENT"
 
             const val EXTRA_TYPE_BOARD = "EXTRA_TYPE_BOARD"
+        }
+    }
+
+    interface Split {
+        companion object {
+            const val UNDERSCORE = "_"
+            const val COMMA = ","
         }
     }
 }

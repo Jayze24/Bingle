@@ -59,9 +59,9 @@
             app:layout_constraintEnd_toEndOf="@id/imageView_basic_board"/>
 
         <ImageButton
-            android:id="@+id/imageButton_basic_3_8"
+            android:id="@+id/imageButton_basic_3_9"
             style="@style/BoardTile.basic"
-            android:tag="22,42_38_43,23"
+            android:tag="22,42_39_43,23"
             app:layout_constraintTop_toTopOf="@id/imageView_basic_board"
             app:layout_constraintBottom_toBottomOf="@id/imageView_basic_board"
             app:layout_constraintStart_toStartOf="@id/imageView_basic_board"
@@ -220,11 +220,11 @@
         <ImageButton
             android:id="@+id/imageButton_basic_4_3"
             style="@style/BoardTile.basic"
-            android:tag="38_43_44"
+            android:tag="39_43_44"
             app:layout_constraintTop_toBottomOf="@id/imageButton_basic_4_4"
-            app:layout_constraintBottom_toTopOf="@id/imageButton_basic_3_8"
+            app:layout_constraintBottom_toTopOf="@id/imageButton_basic_3_9"
             app:layout_constraintStart_toEndOf="@id/imageButton_basic_4_4"
-            app:layout_constraintEnd_toStartOf="@id/imageButton_basic_3_8"/>
+            app:layout_constraintEnd_toStartOf="@id/imageButton_basic_3_9"/>
 
         <ImageButton
             android:id="@+id/imageButton_basic_2_1"
@@ -238,17 +238,17 @@
         <ImageButton
             android:id="@+id/imageButton_basic_2_2"
             style="@style/BoardTile.basic"
-            android:tag="21_22_38"
+            android:tag="21_22_39"
             app:layout_constraintTop_toTopOf="@id/imageButton_basic_4_3"
             app:layout_constraintBottom_toBottomOf="@id/imageButton_basic_4_3"
-            app:layout_constraintStart_toEndOf="@id/imageButton_basic_3_8"
+            app:layout_constraintStart_toEndOf="@id/imageButton_basic_3_9"
             app:layout_constraintEnd_toStartOf="@id/imageButton_basic_2_1"/>
 
         <ImageButton
             android:id="@+id/imageButton_basic_2_3"
             style="@style/BoardTile.basic"
-            android:tag="38_23_24"
-            app:layout_constraintTop_toBottomOf="@id/imageButton_basic_3_8"
+            android:tag="39_23_24"
+            app:layout_constraintTop_toBottomOf="@id/imageButton_basic_3_9"
             app:layout_constraintBottom_toTopOf="@id/imageButton_basic_2_4"
             app:layout_constraintStart_toStartOf="@id/imageButton_basic_4_3"
             app:layout_constraintEnd_toEndOf="@id/imageButton_basic_4_3"/>
@@ -265,7 +265,7 @@
         <ImageButton
             android:id="@+id/imageButton_basic_4_2"
             style="@style/BoardTile.basic"
-            android:tag="41_42_38"
+            android:tag="41_42_39"
             app:layout_constraintTop_toTopOf="@id/imageButton_basic_2_3"
             app:layout_constraintBottom_toBottomOf="@id/imageButton_basic_2_3"
             app:layout_constraintStart_toStartOf="@id/imageButton_basic_2_2"
@@ -281,84 +281,84 @@
             app:layout_constraintEnd_toEndOf="@id/imageButton_basic_2_1"/>
 
         <View
-            android:id="@+id/view_basic_bucket_start_1_1"
+            android:id="@+id/view_basic_bucket_1_1_0"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:tag="0_start11_51"
+            android:tag="110_110_51"
             app:layout_constraintTop_toTopOf="@id/imageView_basic_bucket"
-            app:layout_constraintBottom_toTopOf="@id/view_basic_bucket_start_1_2"
+            app:layout_constraintBottom_toTopOf="@id/view_basic_bucket_1_2_0"
             app:layout_constraintStart_toStartOf="@id/imageView_basic_bucket"
-            app:layout_constraintEnd_toStartOf="@id/view_basic_bucket_start_2_1"/>
+            app:layout_constraintEnd_toStartOf="@id/view_basic_bucket_2_1_0"/>
 
         <View
-            android:id="@+id/view_basic_bucket_start_1_2"
+            android:id="@+id/view_basic_bucket_1_2_0"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:tag="0_start12_51"
-            app:layout_constraintTop_toBottomOf="@id/view_basic_bucket_start_1_1"
+            android:tag="120_120_51"
+            app:layout_constraintTop_toBottomOf="@id/view_basic_bucket_1_1_0"
             app:layout_constraintBottom_toBottomOf="@id/imageView_basic_bucket"
-            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_start_1_1"
-            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_start_1_1"/>
+            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_1_1_0"
+            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_1_1_0"/>
 
         <View
-            android:id="@+id/view_basic_bucket_start_2_1"
+            android:id="@+id/view_basic_bucket_2_1_0"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:tag="0_start21_51"
-            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_start_1_1"
-            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_start_1_1"
-            app:layout_constraintStart_toEndOf="@id/view_basic_bucket_start_1_1"
-            app:layout_constraintEnd_toStartOf="@id/view_basic_bucket_start_3_1"/>
+            android:tag="210_210_51"
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_1_1_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_1_1_0"
+            app:layout_constraintStart_toEndOf="@id/view_basic_bucket_1_1_0"
+            app:layout_constraintEnd_toStartOf="@id/view_basic_bucket_3_1_0"/>
 
         <View
-            android:id="@+id/view_basic_bucket_start_2_2"
+            android:id="@+id/view_basic_bucket_2_2_0"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:tag="0_start22_51"
-            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_start_1_2"
-            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_start_1_2"
-            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_start_2_1"
-            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_start_2_1" />
+            android:tag="220_220_51"
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_1_2_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_1_2_0"
+            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_2_1_0"
+            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_2_1_0" />
 
         <View
-            android:id="@+id/view_basic_bucket_start_3_1"
+            android:id="@+id/view_basic_bucket_3_1_0"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:tag="0_start31_51"
-            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_start_1_1"
-            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_start_1_1"
-            app:layout_constraintStart_toEndOf="@id/view_basic_bucket_start_2_1"
-            app:layout_constraintEnd_toStartOf="@id/view_basic_bucket_start_4_1"/>
+            android:tag="310_310_51"
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_1_1_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_1_1_0"
+            app:layout_constraintStart_toEndOf="@id/view_basic_bucket_2_1_0"
+            app:layout_constraintEnd_toStartOf="@id/view_basic_bucket_4_1_0"/>
 
         <View
-            android:id="@+id/view_basic_bucket_start_3_2"
+            android:id="@+id/view_basic_bucket_3_2_0"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:tag="0_start32_51"
-            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_start_1_2"
-            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_start_1_2"
-            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_start_3_1"
-            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_start_3_1"/>
+            android:tag="320_320_51"
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_1_2_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_1_2_0"
+            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_3_1_0"
+            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_3_1_0"/>
 
         <View
-            android:id="@+id/view_basic_bucket_start_4_1"
+            android:id="@+id/view_basic_bucket_4_1_0"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:tag="0_start41_51"
-            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_start_1_1"
-            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_start_1_1"
-            app:layout_constraintStart_toEndOf="@id/view_basic_bucket_start_3_1"
+            android:tag="410_410_51"
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_1_1_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_1_1_0"
+            app:layout_constraintStart_toEndOf="@id/view_basic_bucket_3_1_0"
             app:layout_constraintEnd_toStartOf="@id/imageView_basic_bucket_center"/>
 
         <View
-            android:id="@+id/view_basic_bucket_start_4_2"
+            android:id="@+id/view_basic_bucket_4_2_0"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:tag="0_start42_51"
-            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_start_1_2"
-            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_start_1_2"
-            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_start_4_1"
-            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_start_4_1"/>
+            android:tag="420_420_51"
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_1_2_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_1_2_0"
+            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_4_1_0"
+            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_4_1_0"/>
 
         <ImageView
             android:id="@+id/imageView_basic_bucket_center"
@@ -373,116 +373,116 @@
             app:layout_constraintEnd_toEndOf="@id/imageView_basic_bucket"/>
 
         <View
-            android:id="@+id/view_basic_bucket_end_1_1"
+            android:id="@+id/view_basic_bucket_1_1_9"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:tag="90_end11_90"
-            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_start_1_1"
-            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_start_1_1"
+            android:tag="90_119_90"
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_1_1_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_1_1_0"
             app:layout_constraintStart_toEndOf="@id/imageView_basic_bucket_center"
-            app:layout_constraintEnd_toStartOf="@id/view_basic_bucket_end_2_1"/>
+            app:layout_constraintEnd_toStartOf="@id/view_basic_bucket_2_1_9"/>
 
         <View
-            android:id="@+id/view_basic_bucket_end_1_2"
+            android:id="@+id/view_basic_bucket_1_2_9"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:tag="90_end12_90"
-            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_start_1_2"
-            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_start_1_2"
-            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_end_1_1"
-            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_end_1_1"/>
+            android:tag="90_129_90"
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_1_2_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_1_2_0"
+            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_1_1_9"
+            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_1_1_9"/>
 
         <View
-            android:id="@+id/view_basic_bucket_end_2_1"
+            android:id="@+id/view_basic_bucket_2_1_9"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:tag="90_end21_90"
-            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_start_1_1"
-            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_start_1_1"
-            app:layout_constraintStart_toEndOf="@id/view_basic_bucket_end_1_1"
-            app:layout_constraintEnd_toStartOf="@id/view_basic_bucket_end_3_1"/>
+            android:tag="90_219_90"
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_1_1_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_1_1_0"
+            app:layout_constraintStart_toEndOf="@id/view_basic_bucket_1_1_9"
+            app:layout_constraintEnd_toStartOf="@id/view_basic_bucket_3_1_9"/>
 
         <View
-            android:id="@+id/view_basic_bucket_end_2_2"
+            android:id="@+id/view_basic_bucket_2_2_9"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:tag="90_end22_90"
-            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_start_1_2"
-            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_start_1_2"
-            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_end_2_1"
-            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_end_2_1"/>
+            android:tag="90_229_90"
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_1_2_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_1_2_0"
+            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_2_1_9"
+            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_2_1_9"/>
 
         <View
-            android:id="@+id/view_basic_bucket_end_3_1"
+            android:id="@+id/view_basic_bucket_3_1_9"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:tag="90_end31_90"
-            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_start_1_1"
-            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_start_1_1"
-            app:layout_constraintStart_toEndOf="@id/view_basic_bucket_end_2_1"
-            app:layout_constraintEnd_toStartOf="@id/view_basic_bucket_end_4_1"/>
+            android:tag="90_319_90"
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_1_1_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_1_1_0"
+            app:layout_constraintStart_toEndOf="@id/view_basic_bucket_2_1_9"
+            app:layout_constraintEnd_toStartOf="@id/view_basic_bucket_4_1_9"/>
 
         <View
-            android:id="@+id/view_basic_bucket_end_3_2"
+            android:id="@+id/view_basic_bucket_3_2_9"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:tag="90_end32_90"
-            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_start_1_2"
-            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_start_1_2"
-            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_end_3_1"
-            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_end_3_1"/>
+            android:tag="90_329_90"
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_1_2_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_1_2_0"
+            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_3_1_9"
+            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_3_1_9"/>
 
         <View
-            android:id="@+id/view_basic_bucket_end_4_1"
+            android:id="@+id/view_basic_bucket_4_1_9"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:tag="90_end41_90"
-            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_start_1_1"
-            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_start_1_1"
-            app:layout_constraintStart_toEndOf="@id/view_basic_bucket_end_3_1"
+            android:tag="90_419_90"
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_1_1_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_1_1_0"
+            app:layout_constraintStart_toEndOf="@id/view_basic_bucket_3_1_9"
             app:layout_constraintEnd_toEndOf="@id/imageView_basic_bucket"/>
 
         <View
-            android:id="@+id/view_basic_bucket_end_4_2"
+            android:id="@+id/view_basic_bucket_4_2_9"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:tag="90_end42_90"
-            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_start_1_2"
-            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_start_1_2"
-            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_end_4_1"
-            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_end_4_1"/>
+            android:tag="90_429_90"
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_1_2_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_1_2_0"
+            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_4_1_9"
+            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_4_1_9"/>
 
         <View
             android:id="@+id/view_basic_bucket_end_zone"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:tag="90_90_90"
-            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_end_1_1"
-            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_end_4_1"
-            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_end_1_1"
-            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_end_1_2"/>
+            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_1_1_9"
+            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_4_1_9"
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_1_1_9"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_1_2_9"/>
 
         <ImageButton
             android:id="@+id/imageButton_basic_token_1_1"
             android:layout_width="@dimen/size_board_token"
             android:layout_height="@dimen/size_board_token"
-            android:tag="1_1_start11_end11"
+            android:tag="1_1_110_119"
             android:background="@color/colorPrimary"
-            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_start_1_1"
-            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_start_1_1"
-            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_start_1_1"
-            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_start_1_1"/>
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_1_1_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_1_1_0"
+            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_1_1_0"
+            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_1_1_0"/>
 
         <ImageButton
             android:id="@+id/imageButton_basic_token_1_2"
             android:layout_width="@dimen/size_board_token"
             android:layout_height="@dimen/size_board_token"
-            android:tag="1_2_start12_end12"
+            android:tag="1_2_120_129"
             android:background="@color/colorAccent"
-            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_start_1_2"
-            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_start_1_2"
-            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_start_1_2"
-            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_start_1_2" />
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_1_2_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_1_2_0"
+            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_1_2_0"
+            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_1_2_0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

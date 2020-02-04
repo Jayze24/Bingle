@@ -34,19 +34,6 @@ class FragmentBoardBasic : FragmentBoard() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(ViewModelBoard::class.java)
         // TODO: Use the ViewModel
-
-
-
-        mBinding.imageButtonBasic51.setOnClickListener {
-            val set = ConstraintSet()
-            set.clone(mBinding.constraintLayoutBasicContainer)
-            set.centerVertically(mBinding.imageButtonBasicToken11.id, it.id)
-            set.centerHorizontallyRtl(mBinding.imageButtonBasicToken11.id, it.id)
-            val transition = AutoTransition()
-            transition.duration = 500
-            TransitionManager.beginDelayedTransition(mBinding.constraintLayoutBasicContainer, transition)
-            set.applyTo(mBinding.constraintLayoutBasicContainer)
-        }
     }
 
     private fun setViewInit() {
@@ -56,7 +43,7 @@ class FragmentBoardBasic : FragmentBoard() {
             mBinding.imageButtonBasic22,
             mBinding.imageButtonBasic23,
             mBinding.imageButtonBasic24,
-            mBinding.imageButtonBasic38,
+            mBinding.imageButtonBasic39,
             mBinding.imageButtonBasic41,
             mBinding.imageButtonBasic42,
             mBinding.imageButtonBasic43,
@@ -80,22 +67,25 @@ class FragmentBoardBasic : FragmentBoard() {
             mBinding.imageButtonBasic82,
             mBinding.imageButtonBasic83,
             mBinding.imageButtonBasic84,
-            mBinding.viewBasicBucketStart11,
-            mBinding.viewBasicBucketStart12,
-            mBinding.viewBasicBucketStart21,
-            mBinding.viewBasicBucketStart22,
-            mBinding.viewBasicBucketStart31,
-            mBinding.viewBasicBucketStart32,
-            mBinding.viewBasicBucketStart41,
-            mBinding.viewBasicBucketStart42,
-            mBinding.viewBasicBucketEnd11,
-            mBinding.viewBasicBucketEnd12,
-            mBinding.viewBasicBucketEnd21,
-            mBinding.viewBasicBucketEnd22,
-            mBinding.viewBasicBucketEnd31,
-            mBinding.viewBasicBucketEnd32,
-            mBinding.viewBasicBucketEnd41,
-            mBinding.viewBasicBucketEnd42,
+            //버켓의 시작 뷰 뒷자리 0
+            mBinding.viewBasicBucket110,
+            mBinding.viewBasicBucket120,
+            mBinding.viewBasicBucket210,
+            mBinding.viewBasicBucket220,
+            mBinding.viewBasicBucket310,
+            mBinding.viewBasicBucket320,
+            mBinding.viewBasicBucket410,
+            mBinding.viewBasicBucket420,
+            //버켓의 종료 뷰 뒷자리 9
+            mBinding.viewBasicBucket119,
+            mBinding.viewBasicBucket129,
+            mBinding.viewBasicBucket219,
+            mBinding.viewBasicBucket229,
+            mBinding.viewBasicBucket319,
+            mBinding.viewBasicBucket329,
+            mBinding.viewBasicBucket419,
+            mBinding.viewBasicBucket429,
+            //버켓의 종료 뷰의 클릭 받는 뷰
             mBinding.viewBasicBucketEndZone)
 
         val listOfToken = arrayOf(

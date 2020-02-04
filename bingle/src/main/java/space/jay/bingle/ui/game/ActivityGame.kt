@@ -11,6 +11,7 @@ import space.jay.bingle.data.TypeBoard
 import space.jay.bingle.databinding.ActivityGameBinding
 import space.jay.bingle.di.ModuleLogin
 import space.jay.bingle.modules.loading.ManagerLoading
+import java.lang.Exception
 
 class ActivityGame : AppCompatActivity() {
 
@@ -24,20 +25,15 @@ class ActivityGame : AppCompatActivity() {
 
         ManagerLoading.dismiss()
 
-        tempAddTextChangedListener()
+        mBinding.tempButtonGameSend.setOnClickListener {
+            try {
+                mViewModelGame.setMovingNumber(mBinding.tempEditTextGameNumber.text.toString().toInt())
+            } catch (e : Exception) {
+                e.printStackTrace()
+            }
+
+        }
     }
 
     fun getViewModelGame() = mViewModelGame
-
-    fun tempAddTextChangedListener() {
-        mBinding.tempEditTextGameNumber.addTextChangedListener {
-            it?.also {
-                if (it.isNotEmpty()) {
-                    it.toString().let {value ->
-                        mViewModelGame.setMovingNumber(value.toInt())
-                    }
-                }
-            }
-        }
-    }
 }

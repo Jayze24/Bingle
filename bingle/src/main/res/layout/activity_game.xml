@@ -24,9 +24,18 @@
             android:id="@+id/temp_editText_game_number"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
+            android:inputType="numberSigned"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
+
+        <Button
+            android:id="@+id/temp_button_game_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="send"
+            app:layout_constraintStart_toEndOf="@id/temp_editText_game_number"
+            app:layout_constraintBottom_toBottomOf="@id/temp_editText_game_number"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

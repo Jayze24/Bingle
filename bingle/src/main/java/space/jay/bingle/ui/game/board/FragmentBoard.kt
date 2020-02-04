@@ -13,13 +13,17 @@ import androidx.core.transition.addListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import dagger.android.support.AndroidSupportInjection
+import space.jay.bingle.Constants
 import space.jay.bingle.data.BoardTile
 import space.jay.bingle.data.BoardToken
 import space.jay.bingle.data.Player
 import space.jay.bingle.modules.BoxUser
 import space.jay.bingle.ui.game.ActivityGame
 import space.jay.bingle.ui.game.ViewModelGame
+import java.util.*
 import javax.inject.Inject
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 open class FragmentBoard : Fragment() {
 
@@ -36,9 +40,10 @@ open class FragmentBoard : Fragment() {
     private var mMapToken = HashMap<String, BoardToken>()
     private lateinit var mConstraintLayout: ConstraintLayout
 
-    lateinit var mPlayer: Player
+    private lateinit var mPlayer: Player
     private var mSelectedToken: BoardToken? = null
     private var mMovableTileList = ArrayList<BoardTile>()
+    private val mDirectionOfToken = HashMap<String, Queue<BoardTile>>()
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -47,16 +52,17 @@ open class FragmentBoard : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //todo player number 넣는 로직 구현 할 것!!
         mPlayer = Player(mBoxUser.getData().uid, mBoxUser.getData().name, "1")
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
+        //이동 할 넘버 들어오는 곳
         mViewModelGame.mMovingNumber.observe(this, Observer {
             mPlayer.mToldNumber.add(it)
             mPlayer.mTokens.forEach { token ->
-                if (token.tokenLocation != token.endLocation) {
+                if (token.mMovedTileName.last() != token.endLocation) {
                     token.tokenView.isClickable = true
                 }
             }
@@ -73,24 +79,25 @@ open class FragmentBoard : Fragment() {
         addTokens(tokenViews)
     }
 
-    private fun getTileName(tag: Any): String {
-        return tag.toString().split("_")[1]
-    }
-
-    private fun getTokenName(tag: Any): String {
-        val values = tag.toString().split("_")
-        return values[0] + values[1]
-    }
-
     private fun addTokens(tokenViews: Array<ImageButton>) {
         tokenViews.forEach {
-            val values = it.tag.toString().split("_")
-            val token = BoardToken(it, "0", values[0], values[1], values[2], values[3])
+            //토큰 초기화 세팅
+            val values = it.tag.toString().split(Constants.Split.UNDERSCORE)
+            val token = BoardToken(it, values[0], values[1], values[2], values[3]) //토큰 뷰, 플레이어 넘버, 토큰 넘버, 시작 위치, 종료 위치
+            token.mMovedTileName.push(values[2])
+
+            //플레이어 토큰이면 저장
             if (values[0] == mPlayer.mPlayerNumber) {
+                //플레이어 토큰 추가
                 mPlayer.mTokens.add(token)
+                //토큰 클릭 리스너 달기
                 setTokenClickListener(it)
             }
+
+            //맵에 토큰 일괄로 넣기
             mMapToken[getTokenName(it.tag)] = token
+            //기본적으로 클릭 불가능해야 함. 숫자 나올때만 토큰 뷰 클릭 할 수 있음
+            //뷰의 클릭 리스너 보다 늦게 클릭어블이 세팅되어야 정상 작동함
             it.isClickable = false
         }
     }
@@ -99,17 +106,14 @@ open class FragmentBoard : Fragment() {
         view.setOnClickListener {
             mSelectedToken = mMapToken[getTokenName(view.tag)]!!
             mSelectedToken?.also { token ->
-                showMovableTile(getLocation(token), mViewModelGame.mMovingNumber.value!!)
+                showMovableTile(token.mMovedTileName.last(), mViewModelGame.mMovingNumber.value!!)
             } ?: Log.e(this.toString(), "No SelectedToken")
         }
     }
 
-    private fun getLocation(token : BoardToken): String {
-        return if (token.tokenLocation == "0"){
-            token.startLocation
-        } else {
-            token.tokenLocation
-        }
+    private fun getTokenName(tag: Any): String {
+        val values = tag.toString().split(Constants.Split.UNDERSCORE)
+        return values[0] + values[1]
     }
 
     private fun addTiles(tileViews: Array<View>) {
@@ -118,15 +122,15 @@ open class FragmentBoard : Fragment() {
             it.isEnabled = false
 
             //타일 태그 분기
-            val values = it.tag.toString().split("_")
-            val beforeTileNames = values[0].split(",")
+            val values = it.tag.toString().split(Constants.Split.UNDERSCORE)
+            val beforeTileNames = values[0].split(Constants.Split.COMMA)
             val tileName = values[1]
-            val nextTileNames = values[2].split(",")
+            val nextTileNames = values[2].split(Constants.Split.COMMA)
 
             //이동할 타일 클릭 리스너
             it.setOnClickListener { view ->
                 //토큰 클릭 못하게 변경
-                mPlayer.mTokens.forEach {token ->
+                mPlayer.mTokens.forEach { token ->
                     token.tokenView.isClickable = false
                 }
                 //이동 가능한 타일 원복
@@ -142,37 +146,27 @@ open class FragmentBoard : Fragment() {
     }
 
     private fun moveToTile(destinationTile: BoardTile) {
-
         mSelectedToken?.also { selectedToken ->
 
-            var nowTile = mMapTile[getLocation(selectedToken)]!!
-            var nextTileName = if (nowTile.nextTileNames.size == 1){
-                nowTile.nextTileNames[0]
-            } else {
-                if (nowTile.tileName.toInt() / 10 < destinationTile.tileName.toInt() / 10) {
-                    nowTile.nextTileNames[0]
-                } else {
-                    nowTile.nextTileNames[1]
-                }
+            var nextTile = mDirectionOfToken[destinationTile.tileName]!!.poll()
+            if (nextTile.tileName == "90") {
+                nextTile = mMapTile[selectedToken.endLocation]!!
             }
-
-            if (nextTileName == "90") {
-                nextTileName = selectedToken.endLocation
-            }
-            var nextTile = mMapTile[nextTileName]!!
 
             val set = ConstraintSet()
             set.clone(mConstraintLayout)
             set.centerVertically(selectedToken.tokenView.id, nextTile.tileView.id)
             set.centerHorizontallyRtl(selectedToken.tokenView.id, nextTile.tileView.id)
             val transition = AutoTransition()
-            transition.duration = 500
-            transition.addListener (
+            transition.duration = 200
+            transition.addListener(
                 onEnd = {
-                    selectedToken.tokenLocation = nextTileName
-                    if (nextTileName != destinationTile.tileName
-                        && !nowTile.tileName.startsWith("end")){
+                    selectedToken.mMovedTileName.push(nextTile.tileName)
+                    if (mDirectionOfToken[destinationTile.tileName]!!.isNotEmpty()) {
                         moveToTile(destinationTile)
+                    } else {
+                        mSelectedToken = null
+                        mDirectionOfToken.clear()
                     }
                 }
             )
@@ -183,20 +177,21 @@ open class FragmentBoard : Fragment() {
 
     private fun showMovableTile(tileName: String, move: Int) {
         clearMovableTileList()
+        mDirectionOfToken.clear()
 
         //이동 가능한 타일 찾기
         mMapTile[tileName]?.also { tile ->
             if (move > 0) {
+                //양수일때
                 for (t in tile.nextTileNames) {
-                    addMovableTile(t, move)
+                    val direction = LinkedList<BoardTile>()
+                    addForwardTile(direction, t, move)
                 }
-            } else {
-                if (mPlayer.mMoved.isNotEmpty()) {
-                    addMovableTile(tile.tileName, move)
-                } else {
-                    for (t in tile.beforeTileNames) {
-                        addMovableTile(t, move)
-                    }
+            } else if (move < 0) {
+                //음수일때
+                for (t in tile.beforeTileNames) {
+                    val direction = LinkedList<BoardTile>()
+                    addBackTile(direction, t, move)
                 }
             }
         }
@@ -214,27 +209,37 @@ open class FragmentBoard : Fragment() {
         mMovableTileList.clear()
     }
 
-    private fun addMovableTile(tileName: String, move: Int) {
-        var tile = mMapTile[tileName]!!
-        val isPositive = move > 0
-        var count = if (isPositive) move - 1 else move + 1
+    private fun addForwardTile(direction: LinkedList<BoardTile>, tileName: String, move: Int) {
+        val tile: BoardTile = mMapTile[tileName]!!
+        direction.offer(tile)
 
-        while (count != 0) {
-            if (isPositive) {
-                //양수 일때 앞으로 이동
-                tile = mMapTile[tile.nextTileNames[0]]!!
-                --count
-            } else {
-                //음수 일때 뒤로 이동
-                tile = if (mPlayer.mMoved.isNotEmpty()) {
-                    mMapTile[mPlayer.mMoved.pop()]!!
-                } else {
-                    mMapTile[tile.beforeTileNames[0]]!!
+        if (move - 1 == 0) {
+            mDirectionOfToken[tileName] = direction
+            mMovableTileList.add(tile)
+        } else {
+            addForwardTile(direction, tile.nextTileNames[0], move - 1)
+        }
+    }
+
+    private fun addBackTile(direction: LinkedList<BoardTile>, tileName: String, move: Int) {
+        val tile: BoardTile = mMapTile[tileName]!!
+        direction.offer(tile)
+
+        if (move + 1 == 0) {
+            mDirectionOfToken[tileName] = direction
+            mMovableTileList.add(tile)
+        } else {
+            for (t in tile.beforeTileNames) {
+                val newDirection = LinkedList<BoardTile>()
+                for (d in direction) {
+                    newDirection.offer(d)
                 }
-                ++count
+                addBackTile(newDirection, t, move + 1)
             }
         }
+    }
 
-        mMovableTileList.add(tile)
+    private fun getTileName(tag: Any): String {
+        return tag.toString().split(Constants.Split.UNDERSCORE)[1]
     }
 }
