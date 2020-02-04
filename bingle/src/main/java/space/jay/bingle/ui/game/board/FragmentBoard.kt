@@ -185,7 +185,7 @@ open class FragmentBoard : Fragment() {
                 //양수일때
                 for (t in tile.nextTileNames) {
                     val direction = LinkedList<BoardTile>()
-                    addForwardTile(direction, t, move)
+                    addForwardTile(direction, t, move, isShortcut(tileName))
                 }
             } else if (move < 0) {
                 //음수일때
@@ -209,7 +209,7 @@ open class FragmentBoard : Fragment() {
         mMovableTileList.clear()
     }
 
-    private fun addForwardTile(direction: LinkedList<BoardTile>, tileName: String, move: Int) {
+    private fun addForwardTile(direction: LinkedList<BoardTile>, tileName: String, move: Int, shortcut: Boolean) {
         val tile: BoardTile = mMapTile[tileName]!!
         direction.offer(tile)
 
@@ -217,8 +217,17 @@ open class FragmentBoard : Fragment() {
             mDirectionOfToken[tileName] = direction
             mMovableTileList.add(tile)
         } else {
-            addForwardTile(direction, tile.nextTileNames[0], move - 1)
+            val nextTile = if (shortcut) {
+                tile.nextTileNames[1]
+            } else {
+                tile.nextTileNames[0]
+            }
+            addForwardTile(direction, nextTile, move - 1, isShortcut(tileName))
         }
+    }
+
+    private fun isShortcut(tileName: String) : Boolean {
+        return tileName == "22"
     }
 
     private fun addBackTile(direction: LinkedList<BoardTile>, tileName: String, move: Int) {
