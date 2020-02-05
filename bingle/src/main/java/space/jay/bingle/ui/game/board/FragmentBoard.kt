@@ -14,8 +14,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import dagger.android.support.AndroidSupportInjection
 import space.jay.bingle.Constants
-import space.jay.bingle.data.BoardTile
-import space.jay.bingle.data.BoardToken
+import space.jay.bingle.data.Tile
+import space.jay.bingle.data.Token
 import space.jay.bingle.data.Player
 import space.jay.bingle.modules.BoxUser
 import space.jay.bingle.ui.game.ActivityGame
@@ -36,14 +36,14 @@ open class FragmentBoard : Fragment() {
     }
 
     //view
-    private var mMapTile = HashMap<String, BoardTile>()
-    private var mMapToken = HashMap<String, BoardToken>()
+    private var mMapTile = HashMap<String, Tile>()
+    private var mMapToken = HashMap<String, Token>()
     private lateinit var mConstraintLayout: ConstraintLayout
 
     private lateinit var mPlayer: Player
-    private var mSelectedToken: BoardToken? = null
-    private var mMovableTileList = ArrayList<BoardTile>()
-    private val mDirectionOfToken = HashMap<String, Queue<BoardTile>>()
+    private var mSelectedToken: Token? = null
+    private var mMovableTileList = ArrayList<Tile>()
+    private val mDirectionOfToken = HashMap<String, Queue<Tile>>()
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -83,7 +83,7 @@ open class FragmentBoard : Fragment() {
         tokenViews.forEach {
             //토큰 초기화 세팅
             val values = it.tag.toString().split(Constants.Split.UNDERSCORE)
-            val token = BoardToken(it, values[0], values[1], values[2], values[3]) //토큰 뷰, 플레이어 넘버, 토큰 넘버, 시작 위치, 종료 위치
+            val token = Token(it, values[0], values[1], values[2], values[3]) //토큰 뷰, 플레이어 넘버, 토큰 넘버, 시작 위치, 종료 위치
             token.mMovedTileName.push(values[2])
 
             //플레이어 토큰이면 저장
@@ -140,12 +140,12 @@ open class FragmentBoard : Fragment() {
             }
 
             //타일맵에 타일 넣기
-            val tile = BoardTile(tileName, it, beforeTileNames, nextTileNames)
+            val tile = Tile(tileName, it, beforeTileNames, nextTileNames)
             mMapTile[tileName] = tile
         }
     }
 
-    private fun moveToTile(destinationTile: BoardTile) {
+    private fun moveToTile(destinationTile: Tile) {
         mSelectedToken?.also { selectedToken ->
 
             var nextTile = mDirectionOfToken[destinationTile.tileName]!!.poll()
@@ -184,13 +184,13 @@ open class FragmentBoard : Fragment() {
             if (move > 0) {
                 //양수일때
                 for (t in tile.nextTileNames) {
-                    val direction = LinkedList<BoardTile>()
+                    val direction = LinkedList<Tile>()
                     addForwardTile(direction, t, move, isShortcut(tileName))
                 }
             } else if (move < 0) {
                 //음수일때
                 for (t in tile.beforeTileNames) {
-                    val direction = LinkedList<BoardTile>()
+                    val direction = LinkedList<Tile>()
                     addBackTile(direction, t, move)
                 }
             }
@@ -216,8 +216,8 @@ open class FragmentBoard : Fragment() {
         mMovableTileList.clear()
     }
 
-    private fun addForwardTile(direction: LinkedList<BoardTile>, tileName: String, move: Int, shortcut: Boolean) {
-        val tile: BoardTile = mMapTile[tileName]!!
+    private fun addForwardTile(direction: LinkedList<Tile>, tileName: String, move: Int, shortcut: Boolean) {
+        val tile: Tile = mMapTile[tileName]!!
         direction.offer(tile)
 
         if (move - 1 == 0) {
@@ -237,8 +237,8 @@ open class FragmentBoard : Fragment() {
         return tileName == "22"
     }
 
-    private fun addBackTile(direction: LinkedList<BoardTile>, tileName: String, move: Int) {
-        val tile: BoardTile = mMapTile[tileName]!!
+    private fun addBackTile(direction: LinkedList<Tile>, tileName: String, move: Int) {
+        val tile: Tile = mMapTile[tileName]!!
         direction.offer(tile)
 
         if (move + 1 == 0) {
@@ -246,7 +246,7 @@ open class FragmentBoard : Fragment() {
             mMovableTileList.add(tile)
         } else {
             for (t in tile.beforeTileNames) {
-                val newDirection = LinkedList<BoardTile>()
+                val newDirection = LinkedList<Tile>()
                 for (d in direction) {
                     newDirection.offer(d)
                 }
