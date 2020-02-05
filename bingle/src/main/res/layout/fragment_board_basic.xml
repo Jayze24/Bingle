@@ -467,7 +467,7 @@
             android:layout_width="@dimen/size_board_token"
             android:layout_height="@dimen/size_board_token"
             android:tag="1_1_110_119"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccent"
             app:layout_constraintTop_toTopOf="@id/view_basic_bucket_1_1_0"
             app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_1_1_0"
             app:layout_constraintStart_toStartOf="@id/view_basic_bucket_1_1_0"

@@ -198,7 +198,14 @@ open class FragmentBoard : Fragment() {
 
         //이동 가능한 타일 enabled 설정
         mMovableTileList.forEach {
-            it.tileView.isEnabled = true
+            var isEnabled = true
+            for (token in mPlayer.mTokens) {
+                if (token.mMovedTileName.last() == it.tileName) {
+                    isEnabled = false
+                }
+            }
+
+            it.tileView.isEnabled = isEnabled
         }
     }
 
