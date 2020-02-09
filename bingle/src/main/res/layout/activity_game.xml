@@ -36,6 +36,29 @@
             app:layout_constraintStart_toEndOf="@id/temp_editText_game_number"
             app:layout_constraintBottom_toBottomOf="@id/temp_editText_game_number"/>
 
+        <Spinner
+            android:id="@+id/temp_spinner_game_other_token"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            app:layout_constraintEnd_toStartOf="@id/temp_button_game_other_token_send"
+            app:layout_constraintBottom_toTopOf="@id/temp_spinner_game_other_tile"/>
+
+        <Spinner
+            android:id="@+id/temp_spinner_game_other_tile"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            app:layout_constraintEnd_toStartOf="@id/temp_button_game_other_token_send"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Button
+            android:id="@+id/temp_button_game_other_token_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="send"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

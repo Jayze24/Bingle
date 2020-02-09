@@ -33,7 +33,6 @@ class FragmentBoardBasic : FragmentBoard() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(ViewModelBoard::class.java)
-        // TODO: Use the ViewModel
     }
 
     private fun setViewInit() {
@@ -90,7 +89,13 @@ class FragmentBoardBasic : FragmentBoard() {
 
         val listOfToken = arrayOf(
             mBinding.imageButtonBasicToken11,
-            mBinding.imageButtonBasicToken12
+            mBinding.imageButtonBasicToken12,
+            mBinding.imageButtonBasicToken21,
+            mBinding.imageButtonBasicToken22,
+            mBinding.imageButtonBasicToken31,
+            mBinding.imageButtonBasicToken32,
+            mBinding.imageButtonBasicToken41,
+            mBinding.imageButtonBasicToken42
         )
 
         setInit(mBinding.constraintLayoutBasicContainer, listOfTileView, listOfToken)

@@ -484,5 +484,71 @@
             app:layout_constraintStart_toStartOf="@id/view_basic_bucket_1_2_0"
             app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_1_2_0" />
 
+        <ImageButton
+            android:id="@+id/imageButton_basic_token_2_1"
+            android:layout_width="@dimen/size_board_token"
+            android:layout_height="@dimen/size_board_token"
+            android:tag="2_1_210_219"
+            android:background="@color/colorPrimary"
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_2_1_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_2_1_0"
+            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_2_1_0"
+            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_2_1_0"/>
+
+        <ImageButton
+            android:id="@+id/imageButton_basic_token_2_2"
+            android:layout_width="@dimen/size_board_token"
+            android:layout_height="@dimen/size_board_token"
+            android:tag="2_2_220_229"
+            android:background="@color/colorPrimary"
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_2_2_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_2_2_0"
+            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_2_2_0"
+            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_2_2_0"/>
+
+        <ImageButton
+            android:id="@+id/imageButton_basic_token_3_1"
+            android:layout_width="@dimen/size_board_token"
+            android:layout_height="@dimen/size_board_token"
+            android:tag="3_1_310_319"
+            android:background="#88f"
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_3_1_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_3_1_0"
+            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_3_1_0"
+            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_3_1_0"/>
+
+        <ImageButton
+            android:id="@+id/imageButton_basic_token_3_2"
+            android:layout_width="@dimen/size_board_token"
+            android:layout_height="@dimen/size_board_token"
+            android:tag="3_2_320_329"
+            android:background="#88f"
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_3_2_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_3_2_0"
+            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_3_2_0"
+            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_3_2_0"/>
+
+        <ImageButton
+            android:id="@+id/imageButton_basic_token_4_1"
+            android:layout_width="@dimen/size_board_token"
+            android:layout_height="@dimen/size_board_token"
+            android:tag="4_1_410_419"
+            android:background="#3dc"
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_4_1_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_4_1_0"
+            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_4_1_0"
+            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_4_1_0"/>
+
+        <ImageButton
+            android:id="@+id/imageButton_basic_token_4_2"
+            android:layout_width="@dimen/size_board_token"
+            android:layout_height="@dimen/size_board_token"
+            android:tag="4_2_420_429"
+            android:background="#3dc"
+            app:layout_constraintTop_toTopOf="@id/view_basic_bucket_4_2_0"
+            app:layout_constraintBottom_toBottomOf="@id/view_basic_bucket_4_2_0"
+            app:layout_constraintStart_toStartOf="@id/view_basic_bucket_4_2_0"
+            app:layout_constraintEnd_toEndOf="@id/view_basic_bucket_4_2_0"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

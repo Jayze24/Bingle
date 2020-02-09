@@ -7,4 +7,6 @@ data class Tile(
     val tileView: View,
     val beforeTileNames: List<String>,
     val nextTileNames: List<String>
-)
+) {
+    var token : Token? = null
+}

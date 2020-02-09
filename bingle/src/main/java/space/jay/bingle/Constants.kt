@@ -31,6 +31,9 @@ class Constants {
         companion object {
             const val VERSION = 0
             const val LOGIN_GOOGLE = 1
+
+            const val MY_TOKEN = 101
+            const val OTHER_TOKEN = 102
         }
     }
 
@@ -65,6 +68,15 @@ class Constants {
         companion object {
             const val UNDERSCORE = "_"
             const val COMMA = ","
+        }
+    }
+
+    interface Key {
+        companion object {
+            const val GOT_NUMBER = "gotNumber"
+            const val TOLD_NUMBER = "toldNumber"
+            const val TOKEN = "token"
+            const val TILE = "tile"
         }
     }
 }

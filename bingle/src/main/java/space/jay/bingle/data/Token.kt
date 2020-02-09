@@ -4,6 +4,7 @@ import android.widget.ImageButton
 import java.util.*
 
 data class Token (
+    val tokenName: String,
     val tokenView: ImageButton,
     val playerNumber: String,
     val tokenNumber: String,
